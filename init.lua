@@ -1,0 +1,8 @@
+require "user.fundamentals"
+require "user.plugins"
+require "user.lualine"
+require "user.keymaps"
+require "user.alpha"
+require "user.telescope"
+require "user.nvim-tree"
+require "user.lsp"
