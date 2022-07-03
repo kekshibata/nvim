@@ -8,6 +8,7 @@ cmd "autocmd!"
 -- cmd("scriptencoding utf-8")
 cmd "syntax enable"
 cmd "set nocompatible"
+cmd "set noswapfile"
 opt.number = true
 opt.fileencodings = { "utf-8", "sjis", "euc-jp", "latin" }
 opt.encoding = "utf-8"
