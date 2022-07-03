@@ -1,5 +1,3 @@
-local fn = vim.fn
-
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
   return
@@ -21,11 +19,11 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim"
   use "nvim-lualine/lualine.nvim"
   use {
-  'kyazdani42/nvim-tree.lua',
-  requires = {
-    'kyazdani42/nvim-web-devicons', -- optional, for file icons
-  },
-  tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    "kyazdani42/nvim-tree.lua",
+    requires = {
+      "kyazdani42/nvim-web-devicons", -- optional, for file icons
+    },
+    tag = "nightly", -- optional, updated every week. (see issue #1193)
   }
   use {
     "kylechui/nvim-surround",
@@ -38,6 +36,14 @@ return packer.startup(function(use)
   use {
     "goolord/alpha-nvim",
   }
+  -- Treesitter
+  use "tree-sitter/tree-sitter"
+  use "nvim-treesitter/nvim-treesitter"
+  use "JoosepAlviste/nvim-ts-context-commentstring"
+  use "p00f/nvim-ts-rainbow"
+  use "nvim-treesitter/playground"
+  use "windwp/nvim-ts-autotag"
+  use "drybalka/tree-climber.nvim"
   use {
     "abecodes/tabout.nvim",
     wants = { "nvim-treesitter" }, -- or require if not used so far
