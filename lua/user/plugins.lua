@@ -58,4 +58,14 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+
+  use "vim-denops/denops.vim"
+  use "Shougo/ddc.vim"
+  use "Shougo/ddc-around"
+  use "Shougo/ddc-nvim-lsp"
+  use "Shougo/ddc-converter_remove_overlap"
+  use "Shougo/pum.vim"
+  use "LumaKernel/ddc-file"
+  use "Shougo/ddc-matcher_head"
+  use "Shougo/ddc-sorter_rank"
 end)
