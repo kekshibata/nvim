@@ -18,11 +18,9 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs"
   use "numToStr/Comment.nvim"
   use "nvim-lualine/lualine.nvim"
+  use "kyazdani42/nvim-web-devicons"
   use {
     "kyazdani42/nvim-tree.lua",
-    requires = {
-      "kyazdani42/nvim-web-devicons", -- optional, for file icons
-    },
     tag = "nightly", -- optional, updated every week. (see issue #1193)
   }
   use {
