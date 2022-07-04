@@ -10,6 +10,7 @@ cmd "syntax enable"
 cmd "set nocompatible"
 cmd "set noswapfile"
 opt.number = true
+opt.relativenumber = true
 opt.fileencodings = { "utf-8", "sjis", "euc-jp", "latin" }
 opt.encoding = "utf-8"
 opt.title = true
