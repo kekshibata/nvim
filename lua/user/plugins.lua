@@ -16,6 +16,8 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim"
   use "nvim-lua/plenary.nvim"
   use "windwp/nvim-autopairs"
+  use "tpope/vim-fugitive"
+  use "tpope/vim-rhubarb"
   use "numToStr/Comment.nvim"
   use "nvim-lualine/lualine.nvim"
   use "kyazdani42/nvim-web-devicons"
