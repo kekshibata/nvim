@@ -17,18 +17,18 @@ configs.setup {
     disable = { "css", "markdown" }, -- list of language that will be disabled
     -- additional_vim_regex_highlighting = true,
   },
-  autopairs = {
-    enable = true,
-  },
+--  autopairs = {
+--    enable = true,
+--  },
   indent = { enable = true, disable = { "python", "css" } },
   context_commentstring = {
     enable = true,
     enable_autocmd = false,
   },
-  autotag = {
-    enable = true,
-    disable = { "xml" },
-  },
+--  autotag = {
+--    enable = true,
+--    disable = { "xml" },
+--  },
   rainbow = {
     enable = true,
     colors = {
