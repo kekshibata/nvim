@@ -13,7 +13,7 @@ local servers = {
   "solc",
   "sumneko_lua",
   "tflint",
-  "tsserver",
+--  "tsserver",
   "pyright",
   "yamlls",
   "bashls",
