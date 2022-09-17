@@ -1,4 +1,5 @@
 require "user.fundamentals"
+require "user.bufferline"
 require "user.plugins"
 require "user.autopairs"
 require "user.fugitive"

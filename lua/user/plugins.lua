@@ -18,30 +18,26 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs"
   use "tpope/vim-fugitive"
   use "tpope/vim-rhubarb"
-  use "numToStr/Comment.nvim"
+  use {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup()
+    end,
+  }
   use "nvim-lualine/lualine.nvim"
   use "kyazdani42/nvim-web-devicons"
   use {
     "kyazdani42/nvim-tree.lua",
     tag = "nightly", -- optional, updated every week. (see issue #1193)
   }
+  use "akinsho/nvim-bufferline.lua"
   use {
     "kylechui/nvim-surround",
     config = function()
-      require("nvim-surround").setup {
-        -- Configuration here, or leave empty to use defaults
-      }
+      require("nvim-surround").setup {}
     end,
   }
-  use {
-    "goolord/alpha-nvim",
-  }
-  -- use {
-  --   "iamcco/markdown-preview.nvim",
-  --   run = function()
-  --     vim.fn["mkdp#util#install"]()
-  --   end,
-  -- }
+  use "goolord/alpha-nvim"
   use {
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
@@ -66,16 +62,18 @@ return packer.startup(function(use)
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
-  use "tom-anders/telescope-vim-bookmarks.nvim"
+  use "nvim-telescope/telescope-file-browser.nvim"
   use "nvim-telescope/telescope-project.nvim"
+  use "tom-anders/telescope-vim-bookmarks.nvim"
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  --  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
+  use "RRethy/vim-illuminate"
 
+  -- DDC completion plugin
   use "vim-denops/denops.vim"
   use "Shougo/ddc.vim"
   use "Shougo/ddc-around"

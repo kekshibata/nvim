@@ -3,9 +3,9 @@ if not status_ok then
   return
 end
 
+local builtin = require "telescope.builtin"
 local actions = require "telescope.actions"
-
-telescope.load_extension "project"
+local fb_actions = require("telescope").extensions.file_browser.actions
 
 telescope.setup {
   defaults = {
@@ -28,4 +28,52 @@ telescope.setup {
       },
     },
   },
+  extensions = {
+    file_browser = {
+      theme = "dropdown",
+      hijack_netrw = true,
+      mappings = {
+        ["n"] = {
+          ["h"] = fb_actions.goto_parent_dir,
+          ["/"] = function()
+            vim.cmd "startinsert"
+          end,
+        },
+      },
+    },
+  },
 }
+
+-- load extentions
+telescope.load_extension "project"
+telescope.load_extension "file_browser"
+
+-- setting telescope keymaps
+vim.keymap.set("n", ";f", function()
+  builtin.find_files { no_ignore = false, hidden = true }
+end)
+
+vim.keymap.set("n", ";r", function()
+  builtin.live_grep()
+end)
+
+vim.keymap.set("n", ";t", function()
+  builtin.help_tags()
+end)
+
+vim.keymap.set("n", ";b", function()
+  builtin.buffers()
+end)
+
+vim.keymap.set("n", ";e", function()
+  telescope.extensions.file_browser.file_browser {
+    path = "%:p:h",
+    cwd = vim.fn.expand "%:p:h",
+    respect_gitignore = false,
+    hidden = true,
+    grouped = true,
+    previewer = false,
+    initial_mode = "normal",
+    layout_config = { height = 40 },
+  }
+end)
