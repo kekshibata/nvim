@@ -16,9 +16,9 @@ null_ls.setup {
       extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
     },
     formatting.black.with { extra_args = { "--fast" } },
+    diagnostics.flake8.with { extra_args = { "--config=.flake8" } },
     formatting.stylua,
     code_actions.eslint_d,
-    formatting.prettier,
     diagnostics.editorconfig_checker,
   },
 }
