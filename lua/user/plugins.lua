@@ -53,6 +53,14 @@ return packer.startup(function(use)
     end,
     ft = { "markdown" },
   }
+  use "unblevable/quick-scope"
+  use {
+    "phaazon/hop.nvim",
+    branch = "v2",
+    config = function()
+      require("hop").setup {}
+    end,
+  }
 
   -- Treesitter
   use "tree-sitter/tree-sitter"

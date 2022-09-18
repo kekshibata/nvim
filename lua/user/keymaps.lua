@@ -39,6 +39,9 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Custom
 keymap("n", "<leader>e", "<cmd>:NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>w", "<cmd>HopWord<CR>", opts)
+keymap("n", "<leader>s", "<cmd>HopChar1<CR>", opts)
+keymap("n", "<leader>/", "<cmd>HopPattern<CR>", opts)
 -- keymap("n", "<leader>f", "<cmd>:lua vim.lsp.buf.formatting()<cr>", opts)
 
 -- Insert --
