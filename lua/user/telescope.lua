@@ -48,9 +48,20 @@ telescope.setup {
 telescope.load_extension "project"
 telescope.load_extension "file_browser"
 
+local center_list = require("telescope.themes").get_dropdown {
+  winblend = 20,
+  width = 0.8,
+  prompt = " ",
+  results_height = 15,
+  previewer = false,
+}
+
 -- setting telescope keymaps
 vim.keymap.set("n", ";f", function()
-  builtin.find_files { no_ignore = false, hidden = true }
+  builtin.find_files {
+    no_ignore = false,
+    hidden = true,
+  }
 end)
 
 vim.keymap.set("n", ";r", function()
@@ -66,14 +77,15 @@ vim.keymap.set("n", ";b", function()
 end)
 
 vim.keymap.set("n", ";e", function()
-  telescope.extensions.file_browser.file_browser {
+  local opts = {
     path = "%:p:h",
     cwd = vim.fn.expand "%:p:h",
     respect_gitignore = false,
     hidden = true,
     grouped = true,
-    previewer = false,
     initial_mode = "normal",
     layout_config = { height = 40 },
   }
+  opts = vim.tbl_deep_extend("force", center_list, opts)
+  telescope.extensions.file_browser.file_browser(opts)
 end)
