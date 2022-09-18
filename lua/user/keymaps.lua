@@ -39,7 +39,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Custom
 keymap("n", "<leader>e", "<cmd>:NvimTreeToggle<cr>", opts)
-keymap("n", "<leader>f", "<cmd>:lua vim.lsp.buf.formatting()<cr>", opts)
+-- keymap("n", "<leader>f", "<cmd>:lua vim.lsp.buf.formatting()<cr>", opts)
 
 -- Insert --
 keymap("i", "<C-l>", "<C-t>", opts)
