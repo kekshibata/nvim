@@ -19,6 +19,12 @@ return packer.startup(function(use)
   use "tpope/vim-fugitive"
   use "tpope/vim-rhubarb"
   use {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup()
+    end,
+  }
+  use {
     "numToStr/Comment.nvim",
     config = function()
       require("Comment").setup()
@@ -31,6 +37,7 @@ return packer.startup(function(use)
     tag = "nightly", -- optional, updated every week. (see issue #1193)
   }
   use "akinsho/nvim-bufferline.lua"
+  use { "akinsho/toggleterm.nvim", tag = "*" }
   use {
     "kylechui/nvim-surround",
     config = function()
@@ -72,6 +79,7 @@ return packer.startup(function(use)
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
   use "RRethy/vim-illuminate"
+  use { "glepnir/lspsaga.nvim", branch = "main" }
 
   -- DDC completion plugin
   use "vim-denops/denops.vim"
