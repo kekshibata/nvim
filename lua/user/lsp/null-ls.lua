@@ -22,13 +22,13 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup {
   debug = true,
   sources = {
-    diagnostics.eslint,
+    formatting.stylua,
+    diagnostics.editorconfig_checker,
+    code_actions.eslint_d,
     formatting.prettierd,
     formatting.black.with { extra_args = { "--fast" } },
+    formatting.isort,
     diagnostics.flake8.with { extra_args = { "--config=.flake8" } },
-    formatting.stylua,
-    code_actions.eslint_d,
-    diagnostics.editorconfig_checker,
   },
 
   on_attach = function(client, bufnr)

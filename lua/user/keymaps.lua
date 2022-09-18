@@ -22,10 +22,9 @@ keymap("n", "+", "<C-a>", opts)
 keymap("n", "-", "<C-x>", opts)
 --Select all
 keymap("n", "<C-a>", "gg<S-v>G", opts)
---Tabs
+--Switch buffers
 keymap("n", "<S-l>", "<cmd>BufferLineCycleNext<CR>", opts)
 keymap("n", "<S-h>", "<cmd>BufferLineCyclePrev<CR>", opts)
--- keymap("n", "te", ":tabedit", opts)
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -42,7 +41,6 @@ keymap("n", "<leader>e", "<cmd>:NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>w", "<cmd>HopWord<CR>", opts)
 keymap("n", "<leader>s", "<cmd>HopChar1<CR>", opts)
 keymap("n", "<leader>/", "<cmd>HopPattern<CR>", opts)
--- keymap("n", "<leader>f", "<cmd>:lua vim.lsp.buf.formatting()<cr>", opts)
 
 -- Insert --
 keymap("i", "<C-l>", "<C-t>", opts)

@@ -103,13 +103,13 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip"
 
   -- DDC completion plugin
-  use "vim-denops/denops.vim"
-  use "Shougo/ddc.vim"
-  use "Shougo/ddc-around"
-  use "Shougo/ddc-nvim-lsp"
-  use "Shougo/ddc-converter_remove_overlap"
-  use "Shougo/pum.vim"
-  use "LumaKernel/ddc-file"
-  use "Shougo/ddc-matcher_head"
-  use "Shougo/ddc-sorter_rank"
+  -- use "vim-denops/denops.vim"
+  -- use "Shougo/ddc.vim"
+  -- use "Shougo/ddc-around"
+  -- use "Shougo/ddc-nvim-lsp"
+  -- use "Shougo/ddc-converter_remove_overlap"
+  -- use "Shougo/pum.vim"
+  -- use "LumaKernel/ddc-file"
+  -- use "Shougo/ddc-matcher_head"
+  -- use "Shougo/ddc-sorter_rank"
 end)
