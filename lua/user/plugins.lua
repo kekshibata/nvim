@@ -81,6 +81,18 @@ return packer.startup(function(use)
   use "RRethy/vim-illuminate"
   use { "glepnir/lspsaga.nvim", branch = "main" }
 
+  -- Completions
+  use "hrsh7th/nvim-cmp"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-buffer"
+  use "hrsh7th/cmp-path"
+  -- use "hrsh7th/cmp-cmdline"
+  use "onsails/lspkind.nvim"
+
+  -- Snipets
+  use "L3MON4D3/LuaSnip"
+  use "saadparwaiz1/cmp_luasnip"
+
   -- DDC completion plugin
   use "vim-denops/denops.vim"
   use "Shougo/ddc.vim"
