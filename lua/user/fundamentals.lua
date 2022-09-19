@@ -68,12 +68,13 @@ if fn.exists "&termguicolors" and fn.exists "&winblend" then
   opt.pumblend = 5
   opt.background = "dark"
   -- Use NeoSolarized
---  vim.g.neosolarized_termtrans = 1
---  cmd "runtime ./colors/NeoSolarized.vim"
---  cmd "colorscheme NeoSolarized"
-  cmd "runtime ./colors/molokai.vim"
-  cmd "colorscheme molokai"
---  cmd "runtime ./colors/256_noir.vim"
---  cmd "colorscheme 256_noir"
-
+  --  vim.g.neosolarized_termtrans = 1
+  --  cmd "runtime ./colors/NeoSolarized.vim"
+  --  cmd "colorscheme NeoSolarized"
+  -- cmd "runtime ./colors/molokai.vim"
+  -- cmd "colorscheme molokai"
+  --  cmd "runtime ./colors/256_noir.vim"
+  --  cmd "colorscheme 256_noir"
+  cmd "runtime ./colors/nord.vim"
+  cmd "colorscheme nord"
 end
