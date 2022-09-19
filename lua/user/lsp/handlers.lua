@@ -58,12 +58,14 @@ end
 
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
-  local keymap = vim.api.nvim_set_keymap
-  keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-  keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-  keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-  keymap(bufnr, "n", "<M-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-  keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ bufnr = bufnr })<CR>", opts)
+  local function keymap(...)
+    vim.api.nvim_buf_set_keymap(bufnr, ...)
+  end
+  keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+  keymap("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+  keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+  keymap("n", "<M-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+  keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ bufnr = bufnr })<CR>", opts)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]]
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
