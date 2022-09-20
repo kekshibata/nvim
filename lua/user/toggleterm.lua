@@ -46,8 +46,32 @@ local lazygit = Terminal:new {
   count = 99,
 }
 
+local lazydocker = Terminal:new {
+  cmd = "lazydocker",
+  hidden = true,
+  direction = "float",
+  float_opts = {
+    border = "none",
+    width = 100000,
+    height = 100000,
+  },
+  on_open = function(_)
+    vim.cmd "startinsert!"
+    -- vim.cmd "set laststatus=0"
+  end,
+  on_close = function(_)
+    -- vim.cmd "set laststatus=3"
+  end,
+  count = 99,
+}
+
 function _LAZYGIT_TOGGLE()
   lazygit:toggle()
 end
 
+function _LAZYDOCKER_TOGGLE()
+  lazydocker:toggle()
+end
+
 vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>lua _LAZYDOCKER_TOGGLE()<CR>", { noremap = true, silent = true })
