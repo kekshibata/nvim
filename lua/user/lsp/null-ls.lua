@@ -28,15 +28,10 @@ null_ls.setup {
     formatting.prettierd,
     formatting.black.with { extra_args = { "--fast" } },
     formatting.isort,
-    diagnostics.flake8.with { extra_args = { "--config=.flake8" } },
+    diagnostics.flake8,
   },
 
   on_attach = function(client, bufnr)
-    if client.name == "sumneko_lua" then
-      client.server_capabilities.documentFormattingProvider = false
-    elseif client.name == "tsserver" then
-      client.server_capabilities.documentFormattingProvider = false
-    end
     if client.supports_method "textDocument/formatting" then
       vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
       vim.api.nvim_create_autocmd("BufWritePre", {

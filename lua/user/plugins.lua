@@ -45,6 +45,7 @@ return packer.startup(function(use)
     end,
   }
   use "goolord/alpha-nvim"
+  use "folke/zen-mode.nvim"
   use {
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
