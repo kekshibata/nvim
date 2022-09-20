@@ -24,6 +24,7 @@ keymap("n", "+", "<C-a>", opts)
 keymap("n", "-", "<C-x>", opts)
 --Select all
 keymap("n", "<C-a>", "gg<S-v>G", opts)
+keymap("n", "<Enter>", "o<Esc>", opts)
 -- Tabs
 keymap("n", "te", "<cmd>tabedit %<CR>", opts)
 keymap("n", "<Tab>", "<cmd>tabnext<CR>", opts)
