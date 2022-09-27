@@ -47,7 +47,7 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Terminal
-keymap("t", "<Esc>", "<C-\\><C-n>", opts)
+keymap("t", "<C-n>", "<C-\\><C-n>", opts)
 
 -- Custom
 keymap("n", "<leader>e", "<cmd>:NvimTreeToggle<cr>", opts)
