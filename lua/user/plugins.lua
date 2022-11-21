@@ -98,6 +98,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path"
   -- use "hrsh7th/cmp-cmdline"
   use "onsails/lspkind.nvim"
+  use { "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" }
 
   -- Snipets
   use "L3MON4D3/LuaSnip"

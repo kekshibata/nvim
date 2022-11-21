@@ -4,11 +4,26 @@ if not status then
 end
 local lspkind = require "lspkind"
 local luasnip = require "luasnip"
+local tabnine = require "cmp_tabnine.config"
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
 end
+
+tabnine.setup {
+  max_lines = 1000,
+  max_num_results = 20,
+  sort = true,
+  run_on_every_keystroke = true,
+  snippet_placeholder = "..",
+  ignored_file_types = {
+    -- default is not to ignore
+    -- uncomment to ignore in lua:
+    -- lua = true
+  },
+  show_prediction_strength = false,
+}
 
 cmp.setup {
   snippet = {
@@ -51,6 +66,7 @@ cmp.setup {
     { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "path" },
+    { name = "cmp_tabnine" },
     -- { name = "cmdline" },
   },
   formatting = {
